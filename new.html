@@ -6,31 +6,27 @@
     <title>Netafim Dashboard</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="new.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body>
     <div class="sidebar" id="sidebar">
         <h2>NETAFIM</h2>
         <ol>
-            <li><a href="#"><span class="material-symbols-rounded">dashboard</span>  Dashboard</a></li>
+            <li><a href="#" onclick="showDashboard()"><span class="material-symbols-rounded">dashboard</span>  Dashboard</a></li>
             <li><a href="#"><span class="material-symbols-rounded">settings</span>  Settings</a></li>
             <li><a href="#"><span class="material-symbols-rounded">help</span>  Help</a></li>
             <li><a href="#"><span class="material-symbols-rounded">logout</span>  Log Out</a></li>
         </ol>
     </div>
-    
     <div class="main-content" id="main-content">
-        <header>
            <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
-           <h1>Home</h1>
-        </header>
-        
-        
+           <h1>Home</h1>    
         <div id="home-content">
             <div class="home-grid">
-                <div class="card" onclick="showRegistrationForm()">
-                    <span><i class="fas fa-user-plus"></i>REGISTER FARMER</span><button>More info →</button>
-                </div>
+                <div class="card" onclick="showRegistrationForm()"><span><i class="fas fa-user-plus"></i>REGISTER FARMER</span><button>More info →</button></div>
                 <div class="card"><span><i class="fas fa-users"></i>CUSTOMER LIST</span><button>More info →</button></div>
+                <div class="card" onclick="showupdatestage()"><span><i class="fas fa-users"></i>UPDATE STATUS</span><button>More info →</button></div>
                 <div class="card"><span><i class="fas fa-chart-line"></i>SALES</span><button>More info →</button></div>
                 <div class="card"><span><i class="fas fa-file-invoice"></i>SALES PIPELINE REPORT</span><button>More info →</button></div>
                 <div class="card"><span><i class="fas fa-clipboard"></i>ASTS</span><button>More info →</button></div>
@@ -39,18 +35,47 @@
                 <div class="card"><span><i class="fas fa-calculator"></i>QUOTATION CALCULATOR</span><button>More info →</button></div>
             </div>
         </div>
-        
+        <div id="update-stage" class="update-stage">
+            <h2>Update Status</h2>
+          
+            <label for="search">Search:</label>
+            <input type="text" id="search" placeholder="Search records...">
+            
+            <label for="username">User Name:</label>
+            <input type="text" id="username" placeholder="Enter user name">
+            
+            <label for="update-stage">Update Stage:</label>
+            <select id="update-stage">
+                <option value="1">1. Enquiry done (1st call)</option>
+                <option value="2">2. Design Submitted</option>
+                <option value="3">3. Quotation Submitted</option>
+                <option value="4">4. Online Appln Done</option>
+                <option value="5">5. Presanction Received</option>
+                <option value="6">6. Installation Done</option>
+                <option value="7">7. Geotagging Done</option>
+                <option value="8">8. Bill Uploaded</option>
+                <option value="9">9. Order from Dear/Converted to Sales</option>
+                <option value="10">10. Order Postponed</option>
+                <option value="11">11. Order Cancelled</option>
+                <option value="12">12. Lost to Other Co.</option>
+            </select>
+            <label>Comment:</label>
+            <input type="text" id="Comment" required >
+            <label for="followUpDate">Next Follow-Up Date:</label>
+            <input type="date" id="followUpDate">
+            <label for="photoUpload">Upload Photo:</label>
+            <input type="file" id="photoUpload" accept="image/*">
+            <button onclick="saveData()">Save</button>
+        </div>
         <div id="registration-form" class="registration-form">
             <h2>Register New Farmer</h2>
+        
             <form>
                         <label>Farmer name:</label>
                         <input type="text" id="farmerName" required >
                     
                         <label>WhatsApp Number:</label>
                         <input type="text" id="whatsappNumber" pattern="\d{10}" required>
-                    
-                        <label>Alternate Number:</label>
-                        <input type="text" id="alternateNumber" pattern="\d{10}">
                 
                         <label>Email ID:</label>
                         <input type="email" id="email">
@@ -110,6 +135,8 @@
                         <input type="date" id="followUpDate" name="followUpDate" required>               
                         <label>Upload CSV File:</label>
                         <input type="file" id="csvFile" accept=".csv">
+                        <label for="photoUpload">Upload Photo:</label>
+            <input type="file" id="photoUpload" accept="image/*">
                 <p><button type="submit">Submit</button>
                 <button type="button" onclick="hideRegistrationForm()">Cancel</button></p>
             </form>
