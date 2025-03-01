@@ -70,7 +70,7 @@ function renderCharts() {
         data: {
             labels: ["Open Leads", "Interested Cold", "Interested Hot"],
             datasets: [{
-                data: [10, 15, 5], // Dummy data, replace with actual
+                data: [10, 15, 5], 
                 backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"]
             }]
         },options: {
@@ -79,17 +79,17 @@ function renderCharts() {
             plugins: {
                 title: {
                     display: true,
-                    text: 'Graphic Presentation', // Headline above chart
+                    text: 'Graphic Presentation', 
                     font: {
                         size: 20,
                         weight: 'bold'
                     },
                     padding: {
-                        bottom: 20 // Space between title and chart
+                        bottom: 20 
                     }
                 },
                 legend: {
-                    position: 'right', // Moves labels to the right side
+                    position: 'right', 
                     align: 'center',
                     labels: {
                         boxWidth: 20,
@@ -108,7 +108,7 @@ function renderCharts() {
                     "Bill Uploaded","Order from Dlr/Converted to Sales","Order Postponed","Order Cancelled",
                     "Lost to Other  Co."],
                 datasets: [{
-                    data: [10, 15, 5,54,35,4,5,6,8,9,16,32], // Dummy data, replace with actual
+                    data: [10, 15, 5,54,35,4,5,6,8,9,16,32], 
                     backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56","#FF6384","#FFCE56",
                         "#007BFF","#9B59B6","#1ABC9C","#34495E","#FFFACD"]
                 }]
@@ -118,17 +118,17 @@ function renderCharts() {
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Graphical Representation of Total Leads', // Headline above chart
+                        text: 'Graphical Representation of Total Leads', 
                         font: {
                             size: 20,
                             weight: 'bold'
                         },
                         padding: {
-                            bottom: 20 // Space between title and chart
+                            bottom: 20 
                         }
                     },
                     legend: {
-                        position: 'right', // Moves labels to the right side
+                        position: 'right', 
                         align: 'center',
                         labels: {
                             boxWidth: 15,
@@ -139,18 +139,18 @@ function renderCharts() {
             }
         });
 
-    // Sales Achievement Bar Chart
+
     new Chart(document.getElementById("salesChart"), {
         type: 'bar',
         data: {
             labels: ["Q1", "Q2", "Q3", "Q4"],
             datasets: [{
                 label: "Achieved",
-                data: [80, 90, 75, 95], // Dummy data
+                data: [80, 90, 75, 95], 
                 backgroundColor: "#4CAF50"
             }, {
                 label: "Target",
-                data: [100, 80, 90, 70], // Target values
+                data: [100, 80, 90, 70], 
                 backgroundColor: "#FFC107"
             }]
         },options: {
@@ -159,17 +159,17 @@ function renderCharts() {
             plugins: {
                 title: {
                     display: true,
-                    text: 'Gantt Chart - Sales Achievement', // Headline above chart
+                    text: 'Gantt Chart - Sales Achievement',
                     font: {
                         size: 18,
                         weight: 'bold'
                     },
                     padding: {
-                        bottom: 20 // Space between title and chart
+                        bottom: 20 
                     }
                 },
                 legend: {
-                    position: 'right', // Moves labels to the right side
+                    position: 'right', 
                     align: 'center',
                     labels: {
                         boxWidth: 15,
@@ -180,14 +180,14 @@ function renderCharts() {
         }
     });
 
-    // Monthly Achievement Line Chart
+    
     new Chart(document.getElementById("monthlyChart"), {
         type: 'line',
         data: {
             labels: ["Jan", "Feb", "Mar", "Apr", "May","June","july","Aug","Sep","Oct","Nov","Dec"],
             datasets: [{
                 label: "Achievement",
-                data: [10, 20, 30, 25, 40,50,70,50,80,30,90], // Dummy data
+                data: [10, 20, 30, 25, 40,50,70,50,80,30,90], 
                 borderColor: "#007BFF",
                 fill: false
             }]
@@ -197,17 +197,17 @@ function renderCharts() {
             plugins: {
                 title: {
                     display: true,
-                    text: 'Bar Chart - Monthly Achievement', // Headline above chart
+                    text: 'Bar Chart - Monthly Achievement', 
                     font: {
                         size: 18,
                         weight: 'bold'
                     },
                     padding: {
-                        bottom: 20 // Space between title and chart
+                        bottom: 20 
                     }
                 },
                 legend: {
-                    position: 'right', // Moves labels to the right side
+                    position: 'right', 
                     align: 'center',
                     labels: {
                         boxWidth: 15,
